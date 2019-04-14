@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>推箱子</title>
+	<script src="./js/map.js"></script>
+	<script src="./js/mapData.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		body{
+			overflow: hidden;
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+		}
+		.container{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<span id="levelText">第一关</span>
+		<div id="mapContainer">
+		</div>
+		<div id="controlContainer">
+			<button id="restart">
+				重新开始
+			</button>
+			<button id="chooseLevel">
+				选择关卡
+			</button>
+			<input type="number" id="levelInput" min="1" />
+			<button id="lastLevel">
+				上一关
+			</button>
+			<button id="nextLevel">
+				下一关
+			</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+//首先预加载图片
+Map.initImgs()
+window.onload = function(){
+	var instance = new Map({
+		"container":"mapContainer",
+		"restartBtn":"restart",
+		"chooseLevelBtn":"chooseLevel",
+		"levelInput":"levelInput",
+		"lastLevelBtn":"lastLevel",
+		"nextLevelBtn":"nextLevel",
+		"levelText":"levelText"
+	})
+	console.log(instance)
+}
+
+</script>
+</html>
